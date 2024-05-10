@@ -54,7 +54,6 @@ public class JwtUtils {
                 .getPayload()
                 .getSubject();
     }
-//    TODO not working.
     public boolean validateToken(String token){
         try {
             Jwts.parser().verifyWith(key()).build().parse(token);
