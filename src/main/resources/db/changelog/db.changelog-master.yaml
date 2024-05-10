@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: classpath:/db/changelog/001_create_users_table_and_populate.sql
+  - include:
+      file: classpath:/db/changelog/002_populate_users_table.sql

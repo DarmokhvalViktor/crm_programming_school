@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "4b17805b-cdd1-41cf-a786-840346485750",
+		"name": "crm-v1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17093488"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login_admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login_default_user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"john.doe@example.com\",\r\n    \"password\":\"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_token_pair_provide_refresh_token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJKb2huIiwicm9sZXMiOlsiUk9MRV9NQU5BR0VSIl0sImlzcyI6ImRhcm1va2h2YWwiLCJpYXQiOjE3MTUzMzM3MDcsImV4cCI6MTcxNTMzNzMwN30.Y8OlYBmEVXzKm8925YM4Q4zazH0bJ-iVCBnd7vJJ33Pg4W8hxPC44ZnM7CVBjNVu",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwidHlwZSI6InJlZnJlc2giLCJpc3MiOiJkYXJtb2todmFsIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE3MTUzMzM2MTQsImV4cCI6MTcxNTQyMDAxNH0.4cCzsKQ-XxhsCXn5kIglHaYv5a9XNalphcgsXU_qQ9eAzKCpXEKUJqhiFYMUltCd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/auth/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "get_orders_with_page_and_order Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpc3MiOiJkYXJtb2todmFsIiwiaWF0IjoxNzE1MzMzNzIzLCJleHAiOjE3MTUzMzczMjN9.F2QRWWmf8URWLV3kqm1QoB75vLcMb-gmTp51iH2_rQXNRNJD8MfLaoJQxq9dXbog",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/orders?page=4&order=-name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "4"
+								},
+								{
+									"key": "order",
+									"value": "-name"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
