@@ -76,9 +76,19 @@ public class SecurityConfig {
                 .exceptionHandling(exception -> exception.authenticationEntryPoint(authEntryPointJwt))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/v1/api/auth/login",
-                                "/v1/api/populate-database",
-                                "/error").permitAll()
+                        .requestMatchers(
+                                "/api/v1/auth/login",
+                                "/error",
+                                "/swagger-resources/**",
+                                "/configuration/security",
+                                "/swagger-ui/**",
+                                "webjars/**",
+                                "swagger-ui.html",
+                                "/v2/api-docs",
+                                "/v3/api-docs",
+                                "/v3/api-docs/**",
+                                "/swagger-resources"
+                                ).permitAll()
                         .anyRequest().authenticated());
         httpSecurity.authenticationProvider(authenticationProvider());
         httpSecurity.addFilterBefore(authTokenFilter(jwtUtils, customUserDetailsService), UsernamePasswordAuthenticationFilter.class);

@@ -24,15 +24,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/v1/api/auth/login",
+							"raw": "http://localhost:8080/api/v1/auth/login",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"v1",
 								"api",
+								"v1",
 								"auth",
 								"login"
 							]
@@ -55,15 +55,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/v1/api/auth/login",
+							"raw": "http://localhost:8080/api/v1/auth/login",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"v1",
 								"api",
+								"v1",
 								"auth",
 								"login"
 							]
@@ -96,15 +96,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/v1/api/auth/refresh",
+							"raw": "http://localhost:8080/api/v1/auth/refresh",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"v1",
 								"api",
+								"v1",
 								"auth",
 								"refresh"
 							]
@@ -140,15 +140,15 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "http://localhost:8080/v1/api/orders?page=4&order=-name",
+							"raw": "http://localhost:8080/api/v1/orders?page=4&order=-name",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"v1",
 								"api",
+								"v1",
 								"orders"
 							],
 							"query": [
