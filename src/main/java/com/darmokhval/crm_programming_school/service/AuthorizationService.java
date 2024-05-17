@@ -23,13 +23,11 @@ public class AuthorizationService {
     private final JwtUtils jwtUtils;
 
     public JWTPairResponse loginUser(LoginRequest loginRequest) {
-        User user = userRepository.findByEmail(loginRequest.getEmail())
-                .orElseThrow(() -> new IllegalArgumentException(String.format("User with email %s was not found",
-                        loginRequest.getEmail())));
-        if(!passwordEncoder.matches(loginRequest.getPassword(), user.getPassword())) {
-            throw new IllegalArgumentException("Invalid password");
+        Optional<User> userOptional = userRepository.findByEmail(loginRequest.getEmail());
+        if(userOptional.isEmpty() || !passwordEncoder.matches(loginRequest.getPassword(), userOptional.get().getPassword())) {
+            throw new IllegalArgumentException("Invalid email or password");
         }
-        return createJWTPairResponse(user);
+        return createJWTPairResponse(userOptional.get());
     }
 
     public JWTPairResponse refresh(JWTRefreshRequest refreshToken) {

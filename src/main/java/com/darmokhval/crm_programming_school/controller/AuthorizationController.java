@@ -34,7 +34,7 @@ public class AuthorizationController {
 //        return ResponseEntity.status(HttpStatus.CREATED).body(authorizationService.registerUser(registerRequest));
 //    }
     @PostMapping("/refresh")
-    @SecurityRequirement(name = "bearerAuth")
+//    @SecurityRequirement(name = "bearerAuth")
 //    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<JWTPairResponse> refresh(
             @RequestBody JWTRefreshRequest refreshToken) {
